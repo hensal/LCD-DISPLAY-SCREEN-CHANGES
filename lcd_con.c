@@ -20,7 +20,8 @@ void dispset_titl(void)
 	
 	unsigned char n;
 	unsigned char dsp_buf;
-
+        
+	label:
 	lcd_l1(0x00);				
 	for (n=0 ;n<16 ;n++) {
 		dsp_buf = TITL0[n];		//line 1
@@ -61,7 +62,7 @@ void dispset_titl(void)
 		dsp_buf = TITL5[n];		//line 2
 		lcd_dout(dsp_buf);		//1data write			
 	}
-	
+	goto label;
 }
 
 void dispset_count(void)
